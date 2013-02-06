@@ -37,6 +37,9 @@ with firefox, and .avi files with vlc, you could use:
   call gf_ext#add_handler('\.avi$', "!cvlc")
 ```
 
+Then just type `gf` over a file which matches one of the handlers as you usually
+would!
+
 For full documentation, install the plugin and run `:help gf-ext` from within
 Vim.
 

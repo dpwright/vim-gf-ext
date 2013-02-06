@@ -1,0 +1,40 @@
+*gf_ext.txt* Extend "gf" to open files with external programs
+
+Author:  Daniel P. Wright <http://dpwright.com>
+License: Same terms as Vim itself (see |license|)
+
+INTRODUCTION                                    *gf-ext*
+
+gf-ext is a simple extension to the `gf` command in vim, to allow it to open
+the file in an arbitrary program rather than as a text file in the current vim
+buffer.
+
+USAGE                                           *gf-ext-usage*
+
+gf-ext works by allowing you to define a handler for files matching a certain
+pattern.  If no pattern matches, it falls back to the default `gf` command.
+
+To use the plugin, extract it to your vim plugins directory, and set up the
+desired handlers using |gf_ext#add_handler|.  For example, to open .jpg files
+with firefox, and .avi files with vlc, you could use: >
+  call gf_ext#add_handler('\.jpg$', "!firefox -new-window")
+  call gf_ext#add_handler('\.avi$', "!cvlc")
+<
+
+FUNCTIONS                                       *gf-ext-functions*
+
+                                                *gf-ext-:gf_ext#add_handler*
+:call gf_ext#add_handler {filepattern, handler}
+                        Add a handler for files matching the pattern
+                        filepattern.  This should be a regular expression in
+                        a format recognised by vim's |match()| function.  The
+                        handler is an ex mode command which will simply be
+                        prepended to the filename.
+
+ABOUT                                           *gf-ext-about*
+
+Grab the latest version or report a bug on GitHub:
+
+http://github.com/dpwright/vim-gf-ext
+
+vim:tw=78:et:ft=help:norl:

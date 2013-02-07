@@ -29,7 +29,7 @@ gf-ext works by allowing you to define a handler for files matching a certain
 pattern.  If no pattern matches, it falls back to the default `gf` command.
 
 To use the plugin, extract it to your vim plugins directory, and set up the
-desired handlers using |gf_ext#add_handler|.  For example, to open .jpg files
+desired handlers using `gf_ext#add_handler`.  For example, to open .jpg files
 with firefox, and .avi files with vlc, you could use:
 
 ```VimL
